@@ -1,0 +1,139 @@
+
+.albums {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#pfp{
+    border-radius: 100px;
+    align-items: center;    
+}
+
+header{margin-bottom: 4%;}
+
+nav a {
+    margin: 20px;
+    text-decoration: none;
+    color: black;
+    
+}
+
+h2{
+    font-family: 'Protest Guerrilla';
+}
+p{text-align: left;}/*align the texts, since they are center aligned by default in main*/
+
+.center{text-align: center;}/*for elements that can't be aligned in the center otherwise*/
+
+body {background-color: #e9e9e9; font-family:'Josefin Sans';}
+
+main{
+    background-color: white;
+    text-align: center;
+}
+
+footer{
+    background-color: #14181d;
+    color:white;
+    padding: 5%;
+    text-align: center;
+    background-size: 10%;
+}
+
+@media (max-width: 540px) {/*small mobile view*/
+    .albums{
+        display: flex;
+        flex-direction: column;}
+}
+
+@media(min-width:540px) and (max-width: 720px){/*large mobile view*/
+    .albums{
+        display: flex;
+        flex-direction: column;}
+}
+
+@media(min-width:720px) and (max-width: 1024px){/*tablet view*/
+    main {
+        border:#14181d solid 1px;
+        padding:2%;
+        margin:10%;
+        margin-top: 5%;
+        margin-bottom:0%;
+    }
+        .author_container {
+        display: grid;
+        grid-template-rows: 1fr 1fr; 
+        grid-template-areas:
+                    "author pfp"
+                    "author_description pfp";
+        padding:10%;}
+
+        #author{grid-area:author; font-size: 50px}
+        #pfp{grid-area:pfp;}
+        #author_description{grid-area:author_description; text-align: left;}
+
+
+        .albums{
+            display:grid; /*grid-layout*/
+            grid-template-columns: repeat(2, 1fr);/*repeats 3 rows twice (6 items) with equal sizes */
+            gap:10px;}
+                
+        .albums img{width: 100%;}
+        
+}
+
+@media (min-width: 1024px) {/*desktop view*/
+        main {
+            border:#14181d solid 1px;
+            padding:2%;
+            margin:10%;
+            margin-top: 5%;
+            margin-bottom:0%;
+            justify-content: center;
+        }
+
+        #p1{
+            font-size: 30px;
+        }
+
+        .desktopView {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-areas: 
+                    "title title title"
+                    "h1 h1 h1"
+                    "h2 h3 h4"
+                    "h2 h3 h4";
+            padding:10%;}
+
+         #title {grid-area:title; font-size: 60px;}
+         #h1 {grid-area:h1;}
+         #h2 {grid-area:h2; }
+         #h3 {grid-area:h3;}
+         #h4 {grid-area:h4;}   
+            
+        .albums{
+            display:grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-areas:"blurred encores eulogy"
+                                "blurred the-cell the-cell";
+                            gap:10px;}
+
+        #blurred{grid-area:blurred;}
+        #encores{grid-area:encores;}
+        #eulogy{grid-area:eulogy;}
+        #the-cell{grid-area:the-cell;}  
+
+        .author_container {
+        display: grid;
+        grid-template-rows: 1fr 1fr; 
+        grid-template-areas:
+                    "author pfp"
+                    "author_description pfp";
+        padding:10%;}
+
+        #author{grid-area:author; font-size: 50px; text-align: center;}
+        #pfp{grid-area:pfp;}
+        #author_description{grid-area:author_description;}
+    }
