@@ -1,0 +1,116 @@
+body{
+    text-align: center;
+    width: 100%;
+    margin:0;
+    background-color: #231651;
+    color: #EFFFFF;
+}
+
+h1{font-family: "Teko", sans-serif;}
+
+p{text-align: left; margin-left: 2%; font-family: "Lato", sans-serif;}/*align the texts, since they are center aligned by default in main*/
+
+header{/*flex to align horizontally*/
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;/*easier space, rather than using margin to push nav to the right*/
+    align-items: center;/*horizontally align h1 and search (search was above h1 before)*/
+    border-bottom: solid #EFFFFF 3px;
+}
+
+#logo{margin-left:1%; color:#EEF36A;} /*in order for logo to not be on the left-most*/
+
+
+#search{/*search button*/
+    border: black solid 2px;  
+    border-radius: 15px;
+    padding: 1%;
+    width: 150px;
+    text-align: center;
+    font-size: 20px;
+    margin-right: 1%;
+    font-size: 30px;
+    background-color: #4DCCBD;
+}
+
+
+.group{/*container for each movie*/
+    border: #EFFFFF solid 2px;
+    margin-top: 15px;
+    box-shadow: 5px 5px 3px #9f90cf;/* first value:horizontal blur, second value:vertical blur, tird value:how much to blur, color*/
+    margin:5%;
+    display:flex;
+    flex-direction: column; /*stacks the content vertically*/
+    justify-content: space-between;/*pushes the button to the bottom to give them a uniform placements*/
+}
+
+.WN{/*Watch now button*/
+    border: black solid 2px;  
+    border-radius: 20px;
+    width:70%;
+    text-align: center;
+    font-size: 40px;
+    border-spacing: small;
+    margin-left: 10%;
+    margin-top: 5%;
+    padding: 3%;
+    background-color: #4DCCBD;
+
+
+}
+
+
+@media(max-width: 720px) {/* mobile view*//*no need to adjust layout since default layout is mobile view*/
+    .categories{
+    display: none; /*hides categories navigation for mobile viewport*/
+    }
+}
+
+
+
+
+@media(min-width:720px) and (max-width: 1024px){/*tablet view*/
+.categories{
+        display:flex;
+        flex-direction: row;
+        gap:25%;
+        text-align: center;
+        margin-right: 20%;
+        font-size: 100%;
+        }
+
+.movies{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);/*fills the grid row by row (left to right then move down to the next row) with the same size */
+    margin:10%;
+    }
+}
+
+
+
+@media(min-width:1024px){/*desktop view*/
+.categories{
+        display:flex;
+        flex-direction: row;
+        gap:25%;
+        text-align: center;
+        margin-right: 20%;
+        font-size: 100%;
+        }
+
+.movies{
+    display: grid;
+    grid-template-areas: 
+                "movie1 movie1"
+                "movie2 movie3"
+                "movie4 movie4"
+                "movie5 movie5"
+                "movie6 movie6";
+}
+    #movie1{grid-area: movie1;}
+    #movie2{grid-area: movie2; padding-bottom: 20px;}
+    #movie3{grid-area: movie3;}
+    #movie4{grid-area: movie4;}
+    #movie5{grid-area: movie5;}
+    #movie6{grid-area: movie6;}
+}
